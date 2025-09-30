@@ -1,3 +1,4 @@
+import heapq
 def refactor_movies(movie_list):
     return [
         {
@@ -9,12 +10,10 @@ def refactor_movies(movie_list):
         for row in movie_list
     ]
 
-# TODO: method is working, but it is going to be a problem for big data set, i need to look for a better way to reduce complexity
 def top_10_certified_fresh(movie_list):
     movie_list_refactored = refactor_movies(movie_list)
     certified = [m for m in movie_list_refactored if m["certified_fresh"]]
-    sorted_movies = sorted(certified, key=lambda m: m["rating"], reverse=True)
-    return sorted_movies[:10]
+    return heapq.nlargest(10, certified, key=lambda m: m["rating"])
 
 if __name__ == '__main__':
     top_10_movies = top_10_certified_fresh(
