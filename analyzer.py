@@ -20,8 +20,8 @@ if __name__ == '__main__':
         movie_list=[
             [1, 9.0, "Interstellar", True],
             [2, 8.5, "Fast and the Furious", True],
-            [7, 10.5, "Fast and the Furious V5", True],
-            [3, 17.2, "The Matrix", False],
+            [7, 10.0, "Fast and the Furious V5", True],
+            [3, 9.9, "The Matrix", False],
             [4, 9.5, "Inception", True],
         ]
     )
